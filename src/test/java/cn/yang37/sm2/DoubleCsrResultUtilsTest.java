@@ -10,9 +10,15 @@ import java.security.PrivateKey;
 @Slf4j
 class DoubleCsrResultUtilsTest {
 
+    /**
+     * 响应的文件
+     */
     final static String RESP = "00000000000000010000000000000001000000000000000000000000000000000000000000000273MIHGAgECBIHAA0Z3wNcF8jwGJwwkQRlX/dBYPF5OilWutJ4YexqrgPedUnsEHDtd,NKuxmdusrPoz41Ai7Fsg7g/X+FkELst/46W3vTakmiPGrC7h/KDuMEOAWFTL5SeA,bPZH4RNZvqkBvVP0VDVgyL6KUg0aNkUlmRPaKbJpiGnl6Aw3S/52630wRHJ598Q5,F1jPCNdqolNYZYoc+GWCqI4Q8VOJtc5t7oieozTdTaKzibIUHk+HjK0Z2Rsp5cCU,1va766TK793H,";
 
-    final static String PRIVATE_KEY_HEX = "b80ec288447c0c4f692a71dfe26e3e922ba28d047c41674244f1d902c97776b2";
+    /**
+     * 64位长度的私钥
+     */
+    final static String PRIVATE_KEY_HEX = "b8****************************************b2";
 
     @Test
     void name1() {
