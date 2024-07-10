@@ -17,7 +17,7 @@ import org.bouncycastle.asn1.*;
 @Builder
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class SM2SignASN1 extends ASN1Object {
+public class SM2Signature extends ASN1Object {
 
     private ASN1Integer int1;
     private ASN1Integer int2;

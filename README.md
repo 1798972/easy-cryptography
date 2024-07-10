@@ -9,7 +9,7 @@
 
 ![image-20240710022655167](https://markdown-1258124344.cos.ap-guangzhou.myqcloud.com/images/202407100226341.png)
 
-
+相关标准，请参考：[密码行业标准化技术委员会-标准列表](http://www.gmbz.org.cn/main/bzlb.html?from=groupmessage)
 
 
 

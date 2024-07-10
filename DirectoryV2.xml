@@ -3,4 +3,8 @@
      <tree path="/src/main/java/cn/yang37/sm2/DoubleCsrResultUtils.java" title="双证请求文件结果解析" extension="java"/>
      <tree path="/src/main/java/cn/yang37/sm2/SM2SignRaw2DerUtils.java" title="SM2签名结果raw/der转换"
            extension="java"/>
+     <tree path="/src/main/java/cn/yang37/entity/asn1/SM2SignASN1.java" title="SM2签名" extension="java"/>
+     <tree path="/src/main/java/cn/yang37/entity/asn1/SM2DigitalEnvelopeASN1.java" title="数字信封" extension="java"/>
+     <tree path="/src/main/java/cn/yang37/entity/asn1/SM2Signature.java" title="SM2签名" extension="java"/>
+     <tree path="/src/main/java/cn/yang37/entity/asn1/SMDigitalEnvelope.java" title="国密数字信封" extension="java"/>
  </trees>
