@@ -2,6 +2,7 @@ package cn.yang37.utils;
 
 import org.bouncycastle.util.encoders.Hex;
 
+import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
@@ -18,7 +19,7 @@ public class HexUtils {
     public static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
 
     /** ==========================  byte ================================ **/
-    public static String byteArrToStr(byte[] byteArr) {
+    public static String byteArr2Str(byte[] byteArr) {
         return new String(byteArr, DEFAULT_CHARSET);
     }
 
@@ -27,7 +28,11 @@ public class HexUtils {
     }
 
     public static String byteArr2Hex(byte[] byteArr) {
-        return Hex.toHexString(byteArr).toUpperCase();
+        return Hex.toHexString(byteArr).toUpperCase(Locale.ROOT);
+    }
+
+    public static BigInteger byteArr2BigInteger(byte[] byteArr) {
+        return new BigInteger(1, byteArr);
     }
 
     /** ==========================  str ================================ **/
@@ -53,7 +58,11 @@ public class HexUtils {
     }
 
     public static String hex2Str(String hex) {
-        return byteArrToStr(hex2ByteArr(hex));
+        return byteArr2Str(hex2ByteArr(hex));
+    }
+
+    public static BigInteger hex2BigInteger(String hex) {
+        return new BigInteger(1, hex2ByteArr(hex));
     }
 
     /** ==========================  base64 ================================ **/
@@ -62,11 +71,20 @@ public class HexUtils {
     }
 
     public static String base642Str(String base64){
-        return byteArrToStr(base642ByteArr(base64));
+        return byteArr2Str(base642ByteArr(base64));
     }
 
     public static String base642Hex(String base64){
         return byteArr2Hex(base642ByteArr(base64));
+    }
+
+    /** ==========================  biginteger ================================ **/
+    public static String bigInteger2Hex(BigInteger bigInteger) {
+        return bigInteger.toString(16).toUpperCase(Locale.ROOT);
+    }
+
+    public static byte[] bigInteger2ByteArr(BigInteger bigInteger) {
+        return bigInteger.toByteArray();
     }
 
 }
