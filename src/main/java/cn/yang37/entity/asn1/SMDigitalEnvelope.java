@@ -4,7 +4,7 @@ import org.bouncycastle.asn1.DEROctetString;
 
 /**
  * @description: 数字信封 sm4+sm2
- * @class: SM2DigitalEnvelopeASN1
+ * @class: SMDigitalEnvelope
  * @author: yang37z@qq.com
  * @date: 2024/7/10 17:32
  * @version: 1.0

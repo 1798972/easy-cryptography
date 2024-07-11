@@ -64,6 +64,18 @@ public class SM2KeyUtils {
     }
 
     /**
+     * 私钥: D
+     *
+     * @param privateD .
+     * @return .
+     * @throws Exception .
+     */
+    public static PrivateKey loadPrivateKeyFromD(String privateD) throws Exception {
+        ECPrivateKeySpec privSpec = new ECPrivateKeySpec(new BigInteger(privateD, 16), EC_SPEC);
+        return getKeyFactory().generatePrivate(privSpec);
+    }
+
+    /**
      * 公钥: PKCS8 (注意SM2公钥一般只有PKCS8标准)
      *
      * @param pemKey .
@@ -73,6 +85,21 @@ public class SM2KeyUtils {
     public static PublicKey loadPublicKeyPkcs8(String pemKey) throws Exception {
         X509EncodedKeySpec spec = new X509EncodedKeySpec(readPem(pemKey));
         return getKeyFactory().generatePublic(spec);
+    }
+
+    /**
+     * 公钥: XY
+     *
+     * @param publicXy .
+     * @return .
+     * @throws Exception .
+     */
+    public static PublicKey loadPublicKeyFromXy(String publicXy) throws Exception {
+        BigInteger x = new BigInteger(publicXy.substring(0, 64), 16);
+        BigInteger y = new BigInteger(publicXy.substring(64), 16);
+        ECPoint q = EC_SPEC.getCurve().createPoint(x, y);
+        ECPublicKeySpec pubSpec = new ECPublicKeySpec(q, EC_SPEC);
+        return getKeyFactory().generatePublic(pubSpec);
     }
 
     /**
@@ -95,7 +122,8 @@ public class SM2KeyUtils {
      * @return .
      */
     public static String parsePrivateD(PrivateKey privateKey) {
-        return ((org.bouncycastle.jce.interfaces.ECPrivateKey) privateKey).getD().toString(16);
+        BigInteger d = ((org.bouncycastle.jce.interfaces.ECPrivateKey) privateKey).getD();
+        return String.format("%064x", d);
     }
 
     /**
@@ -108,7 +136,7 @@ public class SM2KeyUtils {
         ECPoint q = parseEcPointQ(privateD);
         BigInteger x = q.getAffineXCoord().toBigInteger();
         BigInteger y = q.getAffineYCoord().toBigInteger();
-        return String.format("%s%s", x.toString(16), y.toString(16));
+        return String.format("%064x%064x", x, y);
     }
 
     /**
@@ -122,7 +150,7 @@ public class SM2KeyUtils {
         ECPoint q = ecPublicKey.getQ();
         BigInteger x = q.getAffineXCoord().toBigInteger();
         BigInteger y = q.getAffineYCoord().toBigInteger();
-        return String.format("%s%s", x.toString(16), y.toString(16));
+        return String.format("%064x%064x", x, y);
     }
 
     /**
@@ -188,5 +216,4 @@ public class SM2KeyUtils {
         pemReader.close();
         return pemContent;
     }
-
 }

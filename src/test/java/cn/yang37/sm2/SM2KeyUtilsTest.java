@@ -24,13 +24,16 @@ class SM2KeyUtilsTest {
         PublicKey publicKey3 = SM2KeyUtils.parsePublicKeyFromPrivateKeyD(privateD);
         String publicKeyXy = SM2KeyUtils.parsePublicKeyXyFromPrivateKeyD(privateD);
         String publicKeyXy2 = SM2KeyUtils.parsePublicKeyXyFromPublicKey(publicKey1);
-
         log.info("公钥:\n{}", publicKey1);
         log.info("公钥:\n{}", publicKey2);
         log.info("公钥:\n{}", publicKey3);
         log.info("公钥(X+Y): {}", publicKeyXy);
         log.info("公钥(X+Y): {}", publicKeyXy2);
-        log.info("");
+
+        PrivateKey privateKey2 = SM2KeyUtils.loadPrivateKeyFromD(privateD);
+        PublicKey publicKey4 = SM2KeyUtils.loadPublicKeyFromXy(publicKeyXy);
+        log.info("私钥:\n{}", privateKey2);
+        log.info("私钥:\n{}", publicKey4);
     }
 
     @Test
@@ -75,4 +78,5 @@ class SM2KeyUtilsTest {
         log.info("公钥(X+Y): {}", publicKeyXy4);
 
     }
+
 }
