@@ -7,4 +7,6 @@
      <tree path="/src/main/java/cn/yang37/entity/asn1/SM2DigitalEnvelopeASN1.java" title="数字信封" extension="java"/>
      <tree path="/src/main/java/cn/yang37/entity/asn1/SM2Signature.java" title="SM2签名" extension="java"/>
      <tree path="/src/main/java/cn/yang37/entity/asn1/SMDigitalEnvelope.java" title="国密数字信封" extension="java"/>
+     <tree path="/src/main/java/cn/yang37/sm2/DoubleCsrRequest.java" title="双证书请求文件" extension="java"/>
+     <tree path="/src/main/java/cn/yang37/sm2/SM2KeyUtils.java" title="SM2秘钥工具类" extension="java"/>
  </trees>
