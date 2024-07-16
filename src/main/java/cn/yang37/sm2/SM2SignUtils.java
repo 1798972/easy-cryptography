@@ -17,7 +17,7 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 
 /**
- * @description:
+ * @description: 私钥签名 公钥验签
  * @class: SM2SignUtils
  * @author: yang37z@qq.com
  * @date: 2024/7/11 12:26
