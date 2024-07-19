@@ -1,4 +1,4 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
 import cn.yang37.utils.HexUtils;
 import org.bouncycastle.asn1.ASN1Integer;

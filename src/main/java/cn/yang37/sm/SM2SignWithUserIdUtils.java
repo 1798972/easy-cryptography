@@ -1,4 +1,4 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
 import org.bouncycastle.crypto.digests.SM3Digest;
 import org.bouncycastle.crypto.params.ECDomainParameters;

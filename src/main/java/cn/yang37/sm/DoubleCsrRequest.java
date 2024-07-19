@@ -1,4 +1,4 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
 import cn.yang37.cons.MagicConstant;
 import cn.yang37.utils.HexUtils;

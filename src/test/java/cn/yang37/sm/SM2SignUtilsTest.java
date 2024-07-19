@@ -1,6 +1,7 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
 import cn.yang37.utils.HexUtils;
+import cn.yang37.utils.TraceUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +17,8 @@ class SM2SignUtilsTest {
 
     @Test
     public void testSM2SignUtils() throws Exception {
+        TraceUtils.start("SM2签名验签");
+
         // 生成SM2密钥对
         KeyPair keyPair = SM2KeyUtils.generateSm2KeyPair();
         PrivateKey privateKey = keyPair.getPrivate();

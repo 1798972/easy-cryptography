@@ -1,5 +1,6 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
+import cn.yang37.utils.TraceUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,8 @@ class SM2SignRaw2DerUtilsTest {
 
     @Test
     void raw2Der() {
+        TraceUtils.start("SM2签名格式转换");
+
         String der = SM2SignRaw2DerUtils.raw2Der(RAW_HEX);
         log.info("[Hex] raw -> der: {}", der);
 
@@ -22,6 +25,8 @@ class SM2SignRaw2DerUtilsTest {
 
     @Test
     void der2Raw() {
+        TraceUtils.start("SM2签名格式转换");
+
         String raw = SM2SignRaw2DerUtils.der2Raw(DER_HEX);
         log.info("[Hex] der -> raw: {}", raw);
 

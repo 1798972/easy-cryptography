@@ -1,5 +1,6 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
+import cn.yang37.utils.TraceUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,8 @@ class SM2KeyUtilsTest {
 
     @Test
     void name1() throws Exception {
+        TraceUtils.start("SM2秘钥");
+
         KeyPair keyPair = SM2KeyUtils.generateSm2KeyPair();
 
         PrivateKey privateKey = keyPair.getPrivate();
@@ -38,6 +41,8 @@ class SM2KeyUtilsTest {
 
     @Test
     void name2() throws Exception {
+        TraceUtils.start("SM2秘钥");
+
         final String privateKeyPkcs1 = "-----BEGIN EC PRIVATE KEY-----\n" +
                 "MHcCAQEEIDIhsqbgBrkpE0Gay6I6K2z9gftTOiwi7bS4aoK3QKj4oAoGCCqBHM9V\n" +
                 "AYItoUQDQgAEeU+j4G8Lni1Q12/vxTwBdct5oacQtKHCf1MRsne4J1E+ghiLuIiu\n" +

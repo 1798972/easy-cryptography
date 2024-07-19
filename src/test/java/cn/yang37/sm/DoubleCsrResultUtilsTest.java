@@ -1,7 +1,8 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
 import cn.yang37.cons.MagicConstant;
 import cn.yang37.utils.HexUtils;
+import cn.yang37.utils.TraceUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -22,12 +23,15 @@ class DoubleCsrResultUtilsTest {
 
     @Test
     void name1() {
+        TraceUtils.start("CFCA双证请求结果文件-提取密文");
         String result = DoubleCsrResultUtils.parseDoubleCsrResult(RESP);
         log.info("doubleCsrResult: {}", result);
     }
 
     @Test
     void name2() throws Exception {
+        TraceUtils.start("CFCA双证请求结果文件-解析");
+
         // 加载私钥
         PrivateKey privateKey = DoubleCsrResultUtils.initPrivateKey(PRIVATE_KEY_HEX);
 

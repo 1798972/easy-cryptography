@@ -102,7 +102,7 @@ d596d18be77035b0bb9ef6abf232e9e81f2df3178bedd56d64220dc72c6883a6
 参考方法：SM2SignRaw2DerUtils.raw2Der()
 
 ```java
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
 import cn.yang37.entity.asn1.SM2Signature;
 import cn.yang37.entity.asn1.SM2SignASN1;

@@ -1,5 +1,6 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
+import cn.yang37.utils.TraceUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,8 @@ class DoubleCsrRequestTest {
 
     @Test
     void name() throws Exception {
+        TraceUtils.start("CFCA双证请求文件生成");
+
         final String dn = "CN=xx,OU=xx,OU=xx,O=xx,C=xx";
         KeyPair keyPair1 = SM2KeyUtils.generateSm2KeyPair();
         KeyPair keyPair2 = SM2KeyUtils.generateSm2KeyPair();

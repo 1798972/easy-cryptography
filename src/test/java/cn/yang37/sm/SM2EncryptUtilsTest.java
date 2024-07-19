@@ -1,7 +1,8 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
 import cn.yang37.utils.HexUtils;
 import cn.yang37.utils.RandomUtils;
+import cn.yang37.utils.TraceUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,8 @@ class SM2EncryptUtilsTest {
 
     @Test
     void name1() throws Exception {
+        TraceUtils.start("SM2加密解密");
+
         final String data = RandomUtils.generateRandomString(500);
         final String hexData = HexUtils.str2Hex(data);
         final String base64Data = HexUtils.str2Base64(data);

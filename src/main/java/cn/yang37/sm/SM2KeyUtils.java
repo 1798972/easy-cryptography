@@ -1,4 +1,4 @@
-package cn.yang37.sm2;
+package cn.yang37.sm;
 
 import org.bouncycastle.asn1.ASN1OctetString;
 import org.bouncycastle.asn1.ASN1Sequence;
